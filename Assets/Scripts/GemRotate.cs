@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GemRotate : MonoBehaviour
 {
-    public float rotateSpeed = 1f;
+    public float rotateSpeed = 5f;
 
     void Update()
     {
