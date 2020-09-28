@@ -15,7 +15,7 @@ public class InterfaceLogic : MonoBehaviour
 
         FrontPage.SetActive(true);
         LoginPage.SetActive(false);
-        Cursor.visible = true;
+        // Cursor.visible = true;
     }
 
     // Update is called once per frame
