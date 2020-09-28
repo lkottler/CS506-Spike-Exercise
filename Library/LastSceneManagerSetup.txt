@@ -1,4 +1,8 @@
 sceneSetups:
+- path: Assets/Scenes/Home.unity
+  isLoaded: 1
+  isActive: 0
+  isSubScene: 0
 - path: Assets/Scenes/InitialPage.unity
   isLoaded: 1
   isActive: 0
@@ -6,8 +10,4 @@ sceneSetups:
 - path: Assets/Scenes/ApiaryDetails.unity
   isLoaded: 1
   isActive: 1
-  isSubScene: 0
-- path: Assets/Scenes/Home.unity
-  isLoaded: 1
-  isActive: 0
   isSubScene: 0
