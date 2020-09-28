@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 1037
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 21
+  controlID: 107
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 22
+  controlID: 60
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 23
+  controlID: 61
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -343,21 +343,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Fonts
+    - Assets
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Fonts
+  - Assets/Editor
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Logan\Desktop\UNITYDEV\CS506-Spike Exercise
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: c03c0000
-    m_LastClickedID: 15552
-    m_ExpandedIDs: 00000000b437000000ca9a3b
+    m_SelectedIDs: 1a380000
+    m_LastClickedID: 14362
+    m_ExpandedIDs: 000000001a38000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -385,7 +385,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000b4370000
+    m_ExpandedIDs: 000000001a380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c623000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 3}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -507,20 +507,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 5ab6ffff
-      m_LastClickedID: -18854
-      m_ExpandedIDs: 6cd8ffff2cfbffff60fbffff
+      m_SelectedIDs: 78f9ffff
+      m_LastClickedID: -1672
+      m_ExpandedIDs: 16deffff2cf1ffff2ef2ffff78f9ffff60fbfffff23600000e3700001e370000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: InputField
-        m_OriginalName: InputField
+        m_Name: canvas_LoginPage
+        m_OriginalName: canvas_LoginPage
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -13044
+        m_UserData: 14066
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -569,9 +569,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 598.4499, y: 418.23767, z: 39.86737}
+    m_Target: {x: 573.5306, y: 475.2379, z: 60.83853}
     speed: 2
-    m_Value: {x: 598.4499, y: 418.23767, z: 39.86737}
+    m_Value: {x: 573.5306, y: 475.2379, z: 60.83853}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -618,13 +618,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.17193401, y: -0.014186462, z: 0.0024778736, w: -0.9850101}
+    m_Target: {x: -0.17486443, y: -0.021562172, z: 0.003832002, w: -0.9843558}
     speed: 2
-    m_Value: {x: -0.17193285, y: -0.0141863655, z: 0.0024778568, w: -0.9850034}
+    m_Value: {x: -0.17486323, y: -0.021562025, z: 0.0038319759, w: -0.98434913}
   m_Size:
-    m_Target: 273.02423
+    m_Target: 376.6339
     speed: 2
-    m_Value: 273.02423
+    m_Value: 360.41522
   m_Ortho:
     m_Target: 0
     speed: 2
