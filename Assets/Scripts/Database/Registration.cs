@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class Registration : MonoBehaviour
 {
@@ -20,16 +21,21 @@ public class Registration : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
-        WWW www = new WWW("Database/register.php", form);
-        yield return www;
-        if (www.text == "0")
+        string uri = "./Database/register.php";
+        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
-            Debug.Log("User created successfully.");
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
-        else
-        {
-            Debug.Log("User creation failed. Error #" + www.text);
+
+            yield return webRequest.SendWebRequest();
+
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log("User creation failed. Error #" + webRequest.error);
+            }
+            else
+            {
+                Debug.Log("User created successfully.");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+            }
         }
     }
 
