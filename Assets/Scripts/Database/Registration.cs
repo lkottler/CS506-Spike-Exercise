@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
+using System.IO;
 
 public class Registration : MonoBehaviour
 {
@@ -21,20 +22,32 @@ public class Registration : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
-        string uri = "./Database/register.php";
-        using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
+        string url = "http://pages.cs.wisc.edu/~lkottler/register.php";
+        //string url = "http://localhost/sqlconnect/register.php";
+        /*
+        WWW www = new WWW(url, form);
+        Debug.Log("Attempting to reach: " + url);
+        yield return www;
+        if (www.text == "0")
         {
-
+            Debug.Log("User created successfully.");
+            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+        }
+        else
+        {
+            Debug.Log("User creation failed. Error #" + www.text);
+        }
+        */
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+        {
             yield return webRequest.SendWebRequest();
-
-            if (webRequest.isNetworkError)
+            if (webRequest.downloadHandler.text == "0")
             {
-                Debug.Log("User creation failed. Error #" + webRequest.error);
+                Debug.Log("User created successfully.");
             }
             else
             {
-                Debug.Log("User created successfully.");
-                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+                Debug.Log("User creation failed. Error #" + webRequest.downloadHandler.text);
             }
         }
     }
