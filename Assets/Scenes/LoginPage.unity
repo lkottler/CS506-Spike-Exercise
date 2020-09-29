@@ -361,8 +361,9 @@ GameObject:
   - component: {fileID: 865544811}
   - component: {fileID: 865544810}
   - component: {fileID: 865544809}
+  - component: {fileID: 865544813}
   m_Layer: 5
-  m_Name: canvas_LoginPage
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -451,6 +452,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &865544813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 865544808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81a03df5261f7e44abbec3fb17ccf2c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1123257487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1304,7 +1317,6 @@ GameObject:
   - component: {fileID: 1752621194}
   - component: {fileID: 1752621193}
   - component: {fileID: 1752621192}
-  - component: {fileID: 1752621195}
   m_Layer: 5
   m_Name: btn_submit_login
   m_TagString: Untagged
@@ -1375,9 +1387,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1752621195}
-        m_TargetAssemblyTypeName: InterfaceLogic, Assembly-CSharp
-        m_MethodName: btn_confirm_loginScript
+      - m_Target: {fileID: 865544813}
+        m_TargetAssemblyTypeName: LoginPage, Assembly-CSharp
+        m_MethodName: Load_initialPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1425,18 +1437,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1752621190}
   m_CullTransparentMesh: 0
---- !u!114 &1752621195
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1752621190}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0298a5c8f67b4ea96e7079d7b8457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1828071505
 GameObject:
   m_ObjectHideFlags: 0

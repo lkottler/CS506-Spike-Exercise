@@ -3,8 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class InitialPage : MonoBehaviour
+public class LoginPage : MonoBehaviour
 {
+    public void Load_initialPage()
+    {
+        SceneManager.LoadScene(0);
+        Debug.Log("Attempted to Load Initial Page");
+    }
     public void Load_loginPage()
     {
         SceneManager.LoadScene(1);

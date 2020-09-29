@@ -160,49 +160,6 @@ RectTransform:
   m_AnchoredPosition: {x: -197, y: 147}
   m_SizeDelta: {x: 357.85516, y: 246.15659}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!1 &172266078
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 172266080}
-  - component: {fileID: 172266079}
-  m_Layer: 0
-  m_Name: ChangeScene
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &172266079
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172266078}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561f12452b3980c4e99558c97f2fab09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &172266080
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 172266078}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 827, y: 147, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &346277073
 GameObject:
   m_ObjectHideFlags: 0
@@ -294,9 +251,9 @@ GameObject:
   - component: {fileID: 1176578435}
   - component: {fileID: 1176578434}
   - component: {fileID: 1176578433}
-  - component: {fileID: 1176578437}
+  - component: {fileID: 1176578438}
   m_Layer: 5
-  m_Name: canvas_FrontPage
+  m_Name: Canvas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -376,23 +333,23 @@ RectTransform:
   - {fileID: 1698732833}
   - {fileID: 147029277}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &1176578437
+--- !u!114 &1176578438
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1176578432}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 0}
+  m_Script: {fileID: 11500000, guid: 2ce7336559e914e4ebda49cec92a6af5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1385479026
@@ -556,10 +513,10 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1617302190}
-        m_TargetAssemblyTypeName: HomeLogin, Assembly-CSharp
-        m_MethodName: changeHomeScene
-        m_Mode: 5
+      - m_Target: {fileID: 1176578438}
+        m_TargetAssemblyTypeName: InitialPage, Assembly-CSharp
+        m_MethodName: Load_loginPage
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -921,7 +878,6 @@ GameObject:
   - component: {fileID: 2101926265}
   - component: {fileID: 2101926264}
   - component: {fileID: 2101926263}
-  - component: {fileID: 2101926262}
   m_Layer: 5
   m_Name: btn_Register
   m_TagString: Untagged
@@ -949,18 +905,6 @@ RectTransform:
   m_AnchoredPosition: {x: -179, y: -183}
   m_SizeDelta: {x: 345.69824, y: 107.78021}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &2101926262
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2101926260}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0298a5c8f67b4ea96e7079d7b8457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2101926263
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1004,9 +948,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2101926262}
-        m_TargetAssemblyTypeName: InterfaceLogic, Assembly-CSharp
-        m_MethodName: btn_registerScript
+      - m_Target: {fileID: 1176578438}
+        m_TargetAssemblyTypeName: InitialPage, Assembly-CSharp
+        m_MethodName: Load_registerPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

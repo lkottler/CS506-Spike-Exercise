@@ -1,13 +1,6 @@
 <?php
-
-	$con = mysqli_connect('34.66.188.103', 'root', 'vrcommencement', 'beekeepers');
-
-	//check that connection happened
-	if (mysqli_connect_errno())
-	{
-		echo "1: Connection failed"; //error code #1 = connection failed
-		exit();
-	}
+	
+	$con = mysqli_connect('34.67.175.21', 'root', 'vrcommencement', 'beekeepers') or die('Error connecting to MySQL server');
 
 	$username = $_POST["name"];
 	$password = $_POST["password"];
