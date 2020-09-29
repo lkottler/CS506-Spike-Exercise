@@ -1,6 +1,6 @@
 <?php
 
-	$con = mysqli_connect('34.66.188.103', 'root', 'vrcommencement', 'unityaccess');
+	$con = mysqli_connect('34.66.188.103', 'root', 'vrcommencement', 'beekeepers');
 
 	//check that connection happened
 	if (mysqli_connect_errno())

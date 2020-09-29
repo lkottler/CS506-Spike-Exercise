@@ -429,7 +429,6 @@ GameObject:
   - component: {fileID: 1343940033}
   - component: {fileID: 1343940032}
   - component: {fileID: 1343940031}
-  - component: {fileID: 1343940030}
   m_Layer: 5
   m_Name: btn_confirm_register
   m_TagString: Untagged
@@ -457,18 +456,6 @@ RectTransform:
   m_AnchoredPosition: {x: 166, y: 52}
   m_SizeDelta: {x: 189.32104, y: 61.75952}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1343940030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1343940028}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 99a0298a5c8f67b4ea96e7079d7b8457, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1343940031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,12 +494,12 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1343940032}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1343940030}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: InterfaceLogic, Assembly-CSharp
         m_MethodName: btn_confirm_registerScript
         m_Mode: 1
@@ -737,7 +724,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1692911420}
+        m_TargetAssemblyTypeName: Registration, Assembly-CSharp
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
@@ -795,6 +794,7 @@ GameObject:
   - component: {fileID: 1692911418}
   - component: {fileID: 1692911417}
   - component: {fileID: 1692911416}
+  - component: {fileID: 1692911420}
   m_Layer: 5
   m_Name: canvas_RegisterPage
   m_TagString: Untagged
@@ -885,6 +885,21 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1692911420
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1692911415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aba75bb77998e3e418e3d70f5ddfbc6c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nameField: {fileID: 1731831915}
+  passwordField: {fileID: 1501016973}
+  submitButton: {fileID: 1343940031}
 --- !u!1 &1716635592
 GameObject:
   m_ObjectHideFlags: 0
@@ -1046,7 +1061,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1692911420}
+        m_TargetAssemblyTypeName: Registration, Assembly-CSharp
+        m_MethodName: VerifyInputs
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_CaretColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_CustomCaretColor: 0
   m_SelectionColor: {r: 0.65882355, g: 0.80784315, b: 1, a: 0.7529412}
