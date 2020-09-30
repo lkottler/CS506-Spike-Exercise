@@ -44,7 +44,7 @@ public class Registration : MonoBehaviour
         using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
         {
             yield return webRequest.SendWebRequest();
-            if (webRequest.downloadHandler.text == "0")
+            if (webRequest.downloadHandler.text[0] == '0')
             {
                 Debug.Log("User created successfully.");
             }
