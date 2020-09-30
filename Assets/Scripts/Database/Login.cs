@@ -24,8 +24,8 @@ public class Login : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
-        //string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/login.php";
-        string url = "http://localhost/sqlconnect/login.php";
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/login.php";
+        //string url = "http://localhost/sqlconnect/login.php";
 
         using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
         {
