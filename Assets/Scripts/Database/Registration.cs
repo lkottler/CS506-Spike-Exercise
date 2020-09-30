@@ -19,8 +19,12 @@ public class Registration : MonoBehaviour
 
     IEnumerator Register()
     {
-
-        /* Depricated
+        WWWForm form = new WWWForm();
+        form.AddField("name", nameField.text);
+        form.AddField("password", passwordField.text);
+        string url = "http://pages.cs.wisc.edu/~lkottler/register.php";
+        //string url = "http://localhost/sqlconnect/register.php";
+        /*
         WWW www = new WWW(url, form);
         Debug.Log("Attempting to reach: " + url);
         yield return www;
@@ -34,13 +38,6 @@ public class Registration : MonoBehaviour
             Debug.Log("User creation failed. Error #" + www.text);
         }
         */
-
-        WWWForm form = new WWWForm();
-        form.AddField("name", nameField.text);
-        form.AddField("password", passwordField.text);
-        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/register.php";
-        //string url = "http://localhost/sqlconnect/register.php";
-
         using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
         {
             yield return webRequest.SendWebRequest();
