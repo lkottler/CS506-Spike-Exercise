@@ -27,3 +27,18 @@ public class ManagePage : MonoBehaviour
         
     }
 }
+
+public static class DBManager
+{
+    public static string username;
+    public static string address, contact;
+
+
+    public static bool LoggedIn { get { return username != null; } }
+
+    public static void LogOut()
+    {
+        username = null;
+    }
+}
+
