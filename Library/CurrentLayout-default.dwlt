@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: Game
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 50
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -227,7 +227,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 86
+  controlID: 51
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -252,7 +252,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 87
+  controlID: 52
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,23 +355,23 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 2c3a0000
-    m_LastClickedID: 14892
-    m_ExpandedIDs: 00000000183a00001a3a00001c3a00001e3a000000ca9a3b
+    m_SelectedIDs: 3e380000
+    m_LastClickedID: 14398
+    m_ExpandedIDs: 000000002438000026380000283800004038000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Resources
+      m_OriginalName: Resources
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 14396
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 5}
     m_SearchString: 
@@ -385,7 +385,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000183a00001a3a00001c3a00001e3a0000
+    m_ExpandedIDs: 00000000243800002638000028380000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -507,20 +507,20 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 4c380000
       m_LastClickedID: 0
-      m_ExpandedIDs: ba0fffffb010ffff0a11ffff6611ffff3212ffff6c15ffff6e15ffffc615ffff1e16ffffcc19ffff0a1bffff081fffff3a27ffff5a2afffffa2bffff642effffa838ffff3e49ffff9449ffff5e4cffffb062ffffb262ffff0863ffffda64ffff6068ffffe06bffff446cffffd06cffff266dffffce6dffff6e6effff4e97ffffa29effff48a0ffffc8a6ffff78a7ffffaea8ffff16dbffffd4deffff6ce0ffff5ce1fffff4f3ffff44f4ffffe2f4ffffc8f6ffff424500004e450000524500006e45000084450000a64500005e5c0000525d0000845d00004a7a00005a7a0000d87a00005a7c00005e7c0000587e00004e8000001e9100001a9a0000269a00002a9a00003e9a0000749a00008e9f000014ab0000
+      m_ExpandedIDs: 4cceffff00e6ffff9ae7ffff88ecfffff2eeffffeaf2ffff08f9ffff82f9ffff72faffff34fbffff6c3900005240000062400000a0400000ba440000ca44000008450000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Background
-        m_OriginalName: Background
+        m_Name: profileButton(Clone)
+        m_OriginalName: profileButton(Clone)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: -61512
+        m_UserData: -10366
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -569,9 +569,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.1000004, y: -0.10929966, z: 0.25}
+    m_Target: {x: 799.0454, y: 78.691536, z: -488.8162}
     speed: 2
-    m_Value: {x: -6.1000004, y: -0.10929966, z: 0.25}
+    m_Value: {x: 799.0454, y: 78.691536, z: -488.8162}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -622,9 +622,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 24.24871
+    m_Target: 734.81287
     speed: 2
-    m_Value: 24.24871
+    m_Value: 734.81287
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -642,7 +642,7 @@ MonoBehaviour:
     m_FarClip: 10000
     m_DynamicClip: 1
     m_OcclusionCulling: 0
-  m_LastSceneViewRotation: {x: -0.06173517, y: 0.03352838, z: -0.0020692544, w: -0.99753666}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

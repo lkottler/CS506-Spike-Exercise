@@ -15,8 +15,8 @@ public class DBManager : MonoBehaviour
     }
     private IEnumerator RefreshUsers()
     {
-        //string uri = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/populate.php";
-        string uri = "http://localhost/sqlconnect/populateUsers.php";
+        string uri = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/populateUsers.php";
+        //string uri = "http://localhost/sqlconnect/populateUsers.php";
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
             // Request and wait for the desired page.

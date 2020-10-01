@@ -12,11 +12,12 @@ public class MainMenu : MonoBehaviour
 
     private List<GameObject> buttons;
     private GameObject canvas;
+    private GameObject profiles;
 
     private void Start()
     {
-        canvas = GameObject.Find("Canvas");
-
+        //DB.users.Add(new User());
+        profiles = GameObject.Find("Canvas/ProfileBG/Profiles");
         if (DB.LoggedIn)
         {
             usernameDisplay.text = "Welcome " + DB.activeUser.username + "!";
@@ -24,16 +25,16 @@ public class MainMenu : MonoBehaviour
             addressDisplay.text = "Address: " + DB.activeUser.address;
         }
 
-        Debug.Log("User count: " + DB.users.Count);
+        int x = -420, y = 920;
         for (int i = 0; i < DB.users.Count; i++)
         {
             var btn = (GameObject)Instantiate(Resources.Load("profileButton", typeof(GameObject))) as GameObject;
             if (btn == null) continue;
-            btn.transform.SetParent(canvas.transform);
+            btn.transform.SetParent(profiles.transform, false);
             btn.transform.localScale = Vector3.one;
             btn.transform.localRotation = Quaternion.Euler(Vector3.zero);
             // Creating buttons every 152 pixels (152 - 128 = 24 pixel padding)
-            btn.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(-410 + 152*(i%6), 100 + (i/6)*-152, 0);
+            btn.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(x+ + 152*(i%6), y + (i/6)*-152, 0);
         }
     }
 
