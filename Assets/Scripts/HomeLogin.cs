@@ -1,13 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class HomeLogin : MonoBehaviour
 {
-    public void Load_initialPage()
+    public void changeHomeScene(string scenename)
     {
-        SceneManager.LoadScene(0);
-        Debug.Log("Attempted to Load Initial Page");
+        Application.LoadLevel(scenename);
     }
 }
