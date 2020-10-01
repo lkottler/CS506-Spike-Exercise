@@ -13,9 +13,9 @@ public class InitialPage : MonoBehaviour
         if (DBManager.LoggedIn)
         {
             Debug.Log("Attempting to create texts: " + DBManager.contact);
-            usernameDisplay.text = "User: " + DBManager.username;
-            contactDisplay.text = DBManager.contact;
-            addressDisplay.text = DBManager.address;
+            usernameDisplay.text = "Welcome " + DBManager.username + "!";
+            contactDisplay.text = "Contact: " + DBManager.contact;
+            addressDisplay.text = "Address: " + DBManager.address;
         }
     }
     public void Load_loginPage()

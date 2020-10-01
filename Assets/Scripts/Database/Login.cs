@@ -35,7 +35,7 @@ public class Login : MonoBehaviour
                 DBManager.username = nameField.text;
                 DBManager.address = webRequest.downloadHandler.text.Split('\t')[1];
                 DBManager.contact = webRequest.downloadHandler.text.Split('\t')[2];
-                UnityEngine.SceneManagement.SceneManager.LoadScene(0);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
             }
             else
             {
