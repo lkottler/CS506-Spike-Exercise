@@ -32,10 +32,9 @@ public class Login : MonoBehaviour
             yield return webRequest.SendWebRequest();
             if (webRequest.downloadHandler.text[0] == '0')
             {
-                DBManager.username = nameField.text;
-                DBManager.address = webRequest.downloadHandler.text.Split('\t')[1];
-                DBManager.contact = webRequest.downloadHandler.text.Split('\t')[2];
-                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+                DB.activeUsername = nameField.text;
+                DB.UpdateActiveUser();
+                UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
             }
             else
             {
