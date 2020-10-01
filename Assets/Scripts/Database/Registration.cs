@@ -9,6 +9,8 @@ public class Registration : MonoBehaviour
 {
     public InputField nameField;
     public InputField passwordField;
+    public InputField contactField;
+    public InputField addressField;
 
     public Button submitButton;
 
@@ -38,6 +40,8 @@ public class Registration : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
+        form.AddField("contact", contactField.text);
+        form.AddField("address", addressField.text);
         string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/register.php";
         //string url = "http://localhost/sqlconnect/register.php";
 
@@ -47,6 +51,7 @@ public class Registration : MonoBehaviour
             if (webRequest.downloadHandler.text[0] == '0')
             {
                 Debug.Log("User created successfully.");
+                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
             }
             else
             {
@@ -57,6 +62,9 @@ public class Registration : MonoBehaviour
 
     public void VerifyInputs()
     {
-        submitButton.interactable = (nameField.text.Length >= 8 && passwordField.text.Length >= 8);
+        submitButton.interactable = (nameField.text.Length >= 8 && 
+                                     passwordField.text.Length >= 8 &&
+                                     contactField.text.Length >= 1 &&
+                                     addressField.text.Length >= 1);
     }
 }
