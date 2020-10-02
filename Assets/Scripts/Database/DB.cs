@@ -13,6 +13,8 @@ public class DB
     public static string activeUsername;
     public static bool LoggedIn { get { return activeUser != null; } }
 
+    public static string returnScene = "MainMenu";
+
     public static void logOut()
     {
         activeUser = null;
@@ -32,7 +34,6 @@ public class DB
         }
         foreach (User u in DB.users)
         {
-            Debug.Log("comparing " + u.username + ":" + DB.activeUsername);
             if (u.username == DB.activeUsername)
             {
                 DB.activeUser = u;
