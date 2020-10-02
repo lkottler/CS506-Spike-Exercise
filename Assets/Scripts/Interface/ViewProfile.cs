@@ -115,7 +115,12 @@ public class ViewProfile : MonoBehaviour
         hiveView = (GameObject)Instantiate(Resources.Load("HiveView", typeof(GameObject))) as GameObject;
         if (hiveView == null) return;
         hiveView.transform.SetParent(canvas.transform);
-        hiveView.GetComponent <RectTransform>().anchoredPosition3D = new Vector3(0, 0, 0);
+        hiveView.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 0, 0);
+        InputField[] fields = hiveView.GetComponents<InputField>();
+        foreach (InputField f in fields)
+        {
+            Debug.Log(f.name);
+        }
     }
 
     public Hive btn_newHive()

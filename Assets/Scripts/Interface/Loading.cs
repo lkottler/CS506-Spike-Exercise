@@ -10,6 +10,7 @@ public class Loading : MonoBehaviour
     void Start()
     {
         DB.manager = gameObject.AddComponent(typeof(DBManager)) as DBManager;
+        DB.hiveManager = gameObject.AddComponent(typeof(HiveManage)) as HiveManage;
         StartCoroutine(init());
         StartCoroutine(ReturnScene());
     }

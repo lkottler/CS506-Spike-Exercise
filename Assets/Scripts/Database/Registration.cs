@@ -36,7 +36,7 @@ public class Registration : MonoBehaviour
             if (webRequest.downloadHandler.text[0] == '0')
             {
                 Debug.Log("User created successfully.");
-                User newUser = new User(nameField.text, contactField.text, addressField.text);
+                DB.users.Add(new User(nameField.text, contactField.text, addressField.text));
                 UnityEngine.SceneManagement.SceneManager.LoadScene(DB.returnScene);
             }
             else

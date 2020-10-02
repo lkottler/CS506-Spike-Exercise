@@ -5,6 +5,7 @@ using UnityEngine;
 public class DB
 {
     public static DBManager manager;
+    public static HiveManage hiveManager;
     public static List<User> users = new List<User>();
 
     public static User viewedUser;

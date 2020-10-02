@@ -57,6 +57,7 @@ public class DBManager : MonoBehaviour
             Debug.Log("finished adding: " + DB.users.Count);
         }
     }
+
     public void LogOut()
     {
         DB.activeUser = null;

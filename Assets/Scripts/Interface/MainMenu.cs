@@ -6,6 +6,8 @@ using UnityEngine.UI;
 
 public class MainMenu : MonoBehaviour
 {
+    private bool isLoading = false;
+
     public Text usernameDisplay1, usernameDisplay2;
 
     private GameObject canvas;
@@ -55,7 +57,23 @@ public class MainMenu : MonoBehaviour
     {
         DB.viewedUser = u;
         Debug.Log("attemping to load user: " + u.username);
+
+        StartCoroutine(getHives());
+        StartCoroutine(loadProfile());
+    }
+    IEnumerator loadProfile()
+    {
+        while (isLoading)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
         SceneManager.LoadScene("ViewProfile");
+    }
+    IEnumerator getHives()
+    {
+        isLoading = true;
+        yield return DB.hiveManager.GetHives();
+        isLoading = false;
     }
 
     // This function will iterate through every user in the Database, creating an associated button.
