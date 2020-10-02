@@ -99,10 +99,7 @@ public class ViewProfile : MonoBehaviour
 
             // Change the OnClick
             createHive.GetComponent<Button>().onClick.RemoveAllListeners();
-            createHive.GetComponent<Button>().onClick.AddListener(delegate
-            {
-                btn_loadHive(hive);
-            });
+            createHive.GetComponent<Button>().onClick.AddListener(delegate{ btn_loadHive(hive); });
 
             // Create a new button there, then open the hive panel
             createNewHiveBtn();
@@ -116,11 +113,37 @@ public class ViewProfile : MonoBehaviour
         if (hiveView == null) return;
         hiveView.transform.SetParent(canvas.transform);
         hiveView.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 0, 0);
-        InputField[] fields = hiveView.GetComponents<InputField>();
-        foreach (InputField f in fields)
+        InputField[] fields = hiveView.GetComponentsInChildren<InputField>();
+        Debug.Log("loading this hive.");
+
+        if (interact)
         {
-            Debug.Log(f.name);
+            foreach (InputField f in fields)
+            {
+                f.interactable = interact;
+                Debug.Log(f.name);
+            }
         }
+
+        fields[0].text = (hive.name == "Hive") ? "" : hive.name;
+        fields[1].text = hive.health.ToString();
+        fields[2].text = hive.honey.ToString();
+        fields[3].text = hive.queenProduction.ToString();
+        fields[4].text = hive.equipment;
+        fields[5].text = hive.profit.ToString();
+
+        // Save & Return button
+        hiveView.GetComponentInChildren<Button>().onClick.AddListener(delegate 
+        {
+            hive.name = fields[0].text ;
+            hive.health = int.Parse(fields[1].text);
+            hive.honey = int.Parse(fields[2].text);
+            hive.queenProduction = int.Parse(fields[3].text);
+            hive.equipment = fields[4].text;
+            hive.profit = int.Parse(fields[5].text);
+
+            Destroy(hiveView);
+        });
     }
 
     public Hive btn_newHive()

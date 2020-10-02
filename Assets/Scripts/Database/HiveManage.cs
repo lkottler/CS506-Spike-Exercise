@@ -60,7 +60,7 @@ public class HiveManage : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("ownerID", DB.viewedUser.id);
 
-        string url = "http://localhost/sqlconnect/populateHives.php";
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/populateHives.php";
         using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
         {
             yield return webRequest.SendWebRequest();
