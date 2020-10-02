@@ -6,6 +6,9 @@ public class DB
 {
     public static DBManager manager;
     public static List<User> users = new List<User>();
+
+    public static User viewedUser;
+
     public static User activeUser;
     public static string activeUsername;
     public static bool LoggedIn { get { return activeUser != null; } }
