@@ -55,7 +55,7 @@ public class HiveManage : MonoBehaviour
         }
     }
 
-    IEnumerator GetHives()
+    public IEnumerator GetHives()
     {
         WWWForm form = new WWWForm();
         form.AddField("ownerID", DB.viewedUser.id);
