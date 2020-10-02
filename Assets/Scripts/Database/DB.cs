@@ -9,6 +9,12 @@ public class DB
     public static User activeUser;
     public static string activeUsername;
     public static bool LoggedIn { get { return activeUser != null; } }
+
+    public static void logOut()
+    {
+        activeUser = null;
+        activeUsername = null;
+    }
     public static void UpdateActiveUser()
     {
         if (DB.activeUsername == null)
