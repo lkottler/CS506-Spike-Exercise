@@ -86,6 +86,7 @@ public class HiveManage : MonoBehaviour
                     tempHive.queenProduction = int.Parse(details[4]);
                     tempHive.equipment = details[5];
                     tempHive.profit = int.Parse(details[6]);
+                    tempHive.id = int.Parse(details[7]);
                     DB.viewedUser.hives.Add(tempHive);
                 }
             }

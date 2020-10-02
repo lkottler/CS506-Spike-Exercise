@@ -91,10 +91,14 @@ public class MainMenu : MonoBehaviour
         if (btn1 != null)
         {
             btn1.GetComponentInChildren<Text>().text = "My Profile";
+            btn1.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
+            btn1.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_loadUser(DB.activeUser); });
+
         }
         if (btn2 != null)
         {
             btn2.GetComponentInChildren<Text>().text = "Logout";
+            btn2.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_logout(); });
         }
     }
@@ -104,6 +108,7 @@ public class MainMenu : MonoBehaviour
         if (btn1 != null)
         {
             btn1.GetComponentInChildren<Text>().text = "Login";
+            btn1.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn1.GetComponentInChildren<Button>().onClick.AddListener(delegate { Load_loginPage(); });
         }
 
@@ -111,6 +116,7 @@ public class MainMenu : MonoBehaviour
         if (btn2 != null)
         {
             btn2.GetComponentInChildren<Text>().text = "Register";
+            btn2.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { Load_registerPage(); });
 
         }

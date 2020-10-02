@@ -1,14 +1,17 @@
 <?php
-	
-	$con = mysqli_connect('34.67.175.21', 'root', 'vrcommencement', 'beekeepers') or die('Error connecting to MySQL server');
+	$db = mysqli_connect('34.67.175.21', 'root', 'virtualcommencement', 'beekeepers');
+
+	if (mysqli_connect_errno())
+	{
+		echo "1: Connection failed"; //error code #1 = failed to connect to db
+		exit();
+	}
 
 	$username = $_POST["name"];
 	$password = $_POST["password"];
 
-	//check if name exists
 	$namecheckquery = "SELECT username FROM users WHERE username='" . $username . "';";
-
-	$namecheck = mysqli_query($con, $namecheckquery) or die("2: Name check query failed"); //error code #2 = name check query failed
+	$namecheck = $db->query($namecheckquery) or die("2: Name check query failed"); //error code #2 = name check query failed
 
 	if (mysqli_num_rows($namecheck) > 0)
 	{
@@ -19,9 +22,14 @@
 	//add user to the table
 	$salt = "\$5\$rounds=5000\$" . "steamedhams" . $username . "\$";
 	$hash = crypt($password, $salt);
-	$insertuserquery = "INSERT INTO users (username, hash, salt) VALUES ('" . $username . "', '" . $hash . "', '" . $salt . "');";
-	mysqli_query($con, $insertuserquery) or die("4: Insert user query failed"); //error code #4 = insert user query failed.
+
+	$contact = $_POST["contact"];
+	$address = $_POST["address"];
+
+	$insertuserquery = "INSERT INTO users (username, hash, salt, contact, address) VALUES ('" . $username . "', '" . $hash . "', '" . $salt . "', '" . $contact . "', '" . $address . "');";
+	$db->query($insertuserquery) or die("4: Insert user query failed"); //error code #4 = insert user query failed.
 
 	echo("0");
 
+	$db->close();
 ?>
