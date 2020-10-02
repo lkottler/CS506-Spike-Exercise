@@ -19,4 +19,13 @@ public class User
         equipment = "Shovel, Beekeeper's Suit";
         pfp = Resources.Load<Sprite>("bee");
     }
+    public User(string name, string contact, string address)
+    {
+        id = -1;
+        username = name;
+        this.contact = contact;
+        this.address = address;
+        equipment = "Shovel, Beekeeper's Suit";
+        pfp = Resources.Load<Sprite>("bee");
+    }
 }

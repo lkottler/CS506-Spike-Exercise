@@ -2,6 +2,8 @@
 #
 # Get latest from https://github.com/github/gitignore/blob/master/Unity.gitignore
 #
+/webGLbuild/
+/pcBuild/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
