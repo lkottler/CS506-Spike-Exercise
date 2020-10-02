@@ -8,7 +8,7 @@ public class User
     public string username;
     public string contact, address, equipment;
     public Sprite pfp;
-    public Hive[] hives;
+    public List<Hive> hives = new List<Hive>();
 
     public User()
     {

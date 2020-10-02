@@ -9,5 +9,4 @@ public class Hive
     public bool isPublic;
     public int health, honey, queenProduction, profit;
     public string equipment;
-
 }
