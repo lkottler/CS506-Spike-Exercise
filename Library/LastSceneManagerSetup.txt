@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/LoadingPage.unity
+- path: Assets/Scenes/RegisterPage.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0
