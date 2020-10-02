@@ -60,6 +60,11 @@ public class Registration : MonoBehaviour
         }
     }
 
+    public void returnScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(DB.returnScene);
+    }
+
     public void VerifyInputs()
     {
         submitButton.interactable = (nameField.text.Length >= 8 && 

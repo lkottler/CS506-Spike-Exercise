@@ -125,6 +125,6 @@ public class MainMenu : MonoBehaviour
     public void Load_registerPage()
     {
         Debug.Log("RegisterPage");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("RegisterPage");
     }
 }
