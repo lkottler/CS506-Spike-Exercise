@@ -66,7 +66,7 @@ public class MainMenu : MonoBehaviour
     // This function will iterate through every user in the Database, creating an associated button.
     private void createProfiles()
     {
-        int x = -420, y = 920;
+        int x = -410, y = 920;
         for (int i = 0; i < DB.users.Count; i++)
         {
             var btn = (GameObject)Instantiate(Resources.Load("profileButton", typeof(GameObject))) as GameObject;
@@ -75,12 +75,15 @@ public class MainMenu : MonoBehaviour
             btn.transform.SetParent(profiles.transform, false);
 
             // set the text
-            Transform text = btn.transform.GetChild(0);
-            text.GetComponent<Text>().text = DB.users[i].username;
-            text.transform.GetChild(0).GetComponent<Text>().text = DB.users[i].username;
+            Text text1 = btn.transform.GetChild(0).GetComponent<Text>();
+            Text text2 = btn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+            text1.text = DB.users[i].username;
+            text2.text = DB.users[i].username;
+            if (DB.users[i] == DB.activeUser)
+                text2.color = Color.red;
 
             // place the button on x and y
-            btn.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(x + +152 * (i % 6), y + (i / 6) * -160, 0);
+            btn.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(x + +164 * (i % 6), y + (i / 6) * -166, 0);
             btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_loadUser(DB.users[i]); });
         }
     }
