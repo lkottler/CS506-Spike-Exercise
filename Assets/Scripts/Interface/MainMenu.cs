@@ -94,7 +94,7 @@ public class MainMenu : MonoBehaviour
             text1.text = user.username;
             text2.text = user.username;
             if (user == DB.activeUser)
-                text2.color = Color.red;
+                text2.color = Color.green;
 
             // change the user's sprite
             btn.GetComponent<Image>().sprite = user.pfp;
