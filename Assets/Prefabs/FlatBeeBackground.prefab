@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 169348743759063552}
   - component: {fileID: 169348743759063557}
-  - component: {fileID: 169348743759063554}
-  - component: {fileID: 169348743759063555}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -76,26 +74,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &169348743759063554
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169348743759063553}
-  m_Enabled: 1
---- !u!114 &169348743759063555
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 169348743759063553}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 561f12452b3980c4e99558c97f2fab09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &169348743777556486
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,13 +98,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 169348743777556486}
-  m_LocalRotation: {x: -0.4946492, y: -0.009764369, z: -0.00996634, w: 0.86898077}
-  m_LocalPosition: {x: -0.16179991, y: 0.653, z: -0.67}
+  m_LocalRotation: {x: 0.35249498, y: 0, z: 0, w: 0.9358137}
+  m_LocalPosition: {x: -0.137, y: 1.116, z: -1.45}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 169348745235594491}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 239.30301, y: 179.202, z: 179.14}
+  m_LocalEulerAnglesHint: {x: 41.28, y: 0, z: 0}
 --- !u!108 &169348743777556536
 Light:
   m_ObjectHideFlags: 0
@@ -198,7 +176,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169348745235594491}
   m_Layer: 0
-  m_Name: Background
+  m_Name: FlatBeeBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -341,13 +319,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5057158802639383324}
-  m_LocalRotation: {x: 0.7964226, y: -0, z: -0, w: -0.60474056}
-  m_LocalPosition: {x: 0.004151821, y: 0.24, z: 1.5}
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: -0.7071068}
+  m_LocalPosition: {x: 0.004151821, y: 0.24, z: 0.656}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 169348745235594491}
   m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 254.42, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 270, y: 0, z: 0}
 --- !u!33 &1216221934625404096
 MeshFilter:
   m_ObjectHideFlags: 0

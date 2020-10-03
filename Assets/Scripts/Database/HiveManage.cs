@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.IO;
+using System.Net;
 
 public class HiveManage : MonoBehaviour
 {
@@ -71,8 +72,10 @@ public class HiveManage : MonoBehaviour
             else
             {
                 string[] rawLines = webRequest.downloadHandler.text.Split('\n');
+                /*
                 if (DB.viewedUser.hives.Count > 0)
                     DB.viewedUser.hives.Clear();
+                */
                 foreach (string rawDetails in rawLines)
                 {
                     Hive tempHive = new Hive();

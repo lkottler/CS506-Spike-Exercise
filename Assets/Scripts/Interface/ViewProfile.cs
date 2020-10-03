@@ -54,6 +54,7 @@ public class ViewProfile : MonoBehaviour
     private void createHives()
     {
         User thisUser = DB.viewedUser;
+        Debug.Log("loading hives of: " + thisUser.username + ", hive count: " + thisUser.hives.Count);
         privateHives = 0;
         for (int i = 0; i < thisUser.hives.Count; i++)
         {   
@@ -67,13 +68,17 @@ public class ViewProfile : MonoBehaviour
                 // set the text
                 Text text1 = btn.transform.GetChild(0).GetComponent<Text>();
                 Text text2 = btn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-                text1.text = hive.name;
-                text2.text = hive.name;
+                text1.text = (hive.name == "") ? "Hive" : hive.name;
+                text2.text = (hive.name == "") ? "Hive" : hive.name;
 
                 // place the button on x and y
                 btn.GetComponent<RectTransform>().anchoredPosition3D = 
                     new Vector3(x + +158 * ((i - privateHives) % 5), y + ((i - privateHives) / 5) * -166, 0);
-                btn.GetComponent<Button>().onClick.AddListener(delegate { btn_loadHive(hive); });
+                btn.GetComponent<Button>().onClick.AddListener(delegate { 
+                    btn_loadHive(hive);
+                    text1.text = (hive.name == "") ? "Hive" : hive.name;
+                    text2.text = (hive.name == "") ? "Hive" : hive.name;
+                });
             }
             else
             {
@@ -94,6 +99,9 @@ public class ViewProfile : MonoBehaviour
         newHiveBtn.GetComponent<RectTransform>().anchoredPosition3D
             = new Vector3(x + +158 * ((DB.viewedUser.hives.Count - privateHives) % 5), y + ((DB.viewedUser.hives.Count - privateHives) / 5) * -166, 0);
         // Clicking this button will change it to act like a typical hive button, and call this function to recreate itself.
+        Text text1 = newHiveBtn.transform.GetChild(0).GetComponent<Text>();
+        Text text2 = newHiveBtn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
         newHiveBtn.GetComponent<Button>().onClick.AddListener(delegate 
         { 
             Hive hive = btn_newHive();
@@ -110,15 +118,9 @@ public class ViewProfile : MonoBehaviour
             // Change the OnClick
             createHive.GetComponent<Button>().onClick.RemoveAllListeners();
             createHive.GetComponent<Button>().onClick.AddListener(delegate{ 
-                
                 btn_loadHive(hive);
-                Debug.Log(this);
-                /*
-                Text text1 = btn.transform.GetChild(0).GetComponent<Text>();
-                Text text2 = btn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-                text1.text = hive.name;
-                text2.text = hive.name;
-                */
+                text1.text = (hive.name == "") ? "Hive" : hive.name;
+                text2.text = (hive.name == "") ? "Hive" : hive.name;
             });
 
             // Create a new button there, then open the hive panel
@@ -130,7 +132,7 @@ public class ViewProfile : MonoBehaviour
     {
         bool interact = (DB.viewedUser == DB.activeUser);
         hiveView = (GameObject)Instantiate(Resources.Load("HiveView", typeof(GameObject))) as GameObject;
-        if (hiveView == null) return hive.name;
+        if (hiveView == null) return hive.name; 
         hiveView.transform.SetParent(canvas.transform);
         hiveView.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 0, 0);
         InputField[] fields = hiveView.GetComponentsInChildren<InputField>();
@@ -141,6 +143,7 @@ public class ViewProfile : MonoBehaviour
             {
                 f.interactable = interact;
             }
+            hiveView.GetComponentInChildren<Toggle>().interactable = interact;
         }
 
         fields[0].text = (hive.name == "Hive") ? "" : hive.name;
@@ -153,7 +156,8 @@ public class ViewProfile : MonoBehaviour
         hiveView.GetComponentInChildren<Toggle>().isOn = hive.isPublic;
 
         // Save & Return button
-        hiveView.GetComponentInChildren<Button>().onClick.AddListener(delegate 
+        
+        hiveView.GetComponentsInChildren<Button>()[0].onClick.AddListener(delegate 
         {
             hive.name = fields[0].text ;
             hive.health = int.Parse(fields[1].text);
@@ -169,8 +173,19 @@ public class ViewProfile : MonoBehaviour
              * 
              */
 
-            Destroy(hiveView);
+            SceneManager.LoadScene("ViewProfile");
         });
+
+        // Delete Hive Button
+        hiveView.GetComponentsInChildren<Button>()[1].onClick.AddListener(delegate
+        {
+            DB.viewedUser.hives.Remove(hive);
+            /*  TODO DELETE THIS HIVE
+             * 
+             */
+            SceneManager.LoadScene("ViewProfile");
+        });
+
         return hive.name;
     }
 
@@ -178,6 +193,7 @@ public class ViewProfile : MonoBehaviour
     {
         Hive hive = new Hive();
         DB.viewedUser.hives.Add(hive);
+        Debug.Log("Creating a new hive: " + DB.viewedUser.hives.Count);
         return hive;
     }
 
