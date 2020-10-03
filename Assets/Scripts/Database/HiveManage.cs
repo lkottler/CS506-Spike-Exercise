@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 using System.IO;
+using System.Net;
 
 public class HiveManage : MonoBehaviour
 {
@@ -60,7 +61,7 @@ public class HiveManage : MonoBehaviour
         WWWForm form = new WWWForm();
         form.AddField("ownerID", DB.viewedUser.id);
 
-        string url = "http://localhost/sqlconnect/populateHives.php";
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/populateHives.php";
         using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
         {
             yield return webRequest.SendWebRequest();
@@ -72,7 +73,9 @@ public class HiveManage : MonoBehaviour
             {
                 string[] rawLines = webRequest.downloadHandler.text.Split('\n');
                 if (DB.viewedUser.hives.Count > 0)
-                    DB.viewedUser.hives.Clear();
+                {
+                    //DB.viewedUser.hives.Clear();
+                }
                 foreach (string rawDetails in rawLines)
                 {
                     Hive tempHive = new Hive();

@@ -12,6 +12,7 @@ public class Hive
     public string equipment;
     public Hive()
     {
+        this.id = -1;
         this.ownerID = -1;
         this.name = "Hive";
         this.isPublic = true;
