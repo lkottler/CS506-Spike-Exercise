@@ -54,6 +54,7 @@ public class ViewProfile : MonoBehaviour
     private void createHives()
     {
         User thisUser = DB.viewedUser;
+        Debug.Log("loading hives: " + thisUser.hives.Count);
         privateHives = 0;
         for (int i = 0; i < thisUser.hives.Count; i++)
         {   
@@ -73,7 +74,11 @@ public class ViewProfile : MonoBehaviour
                 // place the button on x and y
                 btn.GetComponent<RectTransform>().anchoredPosition3D = 
                     new Vector3(x + +158 * ((i - privateHives) % 5), y + ((i - privateHives) / 5) * -166, 0);
-                btn.GetComponent<Button>().onClick.AddListener(delegate { btn_loadHive(hive); });
+                btn.GetComponent<Button>().onClick.AddListener(delegate { 
+                    btn_loadHive(hive);
+                    text1.text = hive.name;
+                    text2.text = hive.name;
+                });
             }
             else
             {
@@ -94,6 +99,9 @@ public class ViewProfile : MonoBehaviour
         newHiveBtn.GetComponent<RectTransform>().anchoredPosition3D
             = new Vector3(x + +158 * ((DB.viewedUser.hives.Count - privateHives) % 5), y + ((DB.viewedUser.hives.Count - privateHives) / 5) * -166, 0);
         // Clicking this button will change it to act like a typical hive button, and call this function to recreate itself.
+        Text text1 = newHiveBtn.transform.GetChild(0).GetComponent<Text>();
+        Text text2 = newHiveBtn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
+
         newHiveBtn.GetComponent<Button>().onClick.AddListener(delegate 
         { 
             Hive hive = btn_newHive();
@@ -110,15 +118,9 @@ public class ViewProfile : MonoBehaviour
             // Change the OnClick
             createHive.GetComponent<Button>().onClick.RemoveAllListeners();
             createHive.GetComponent<Button>().onClick.AddListener(delegate{ 
-                
                 btn_loadHive(hive);
-                Debug.Log(this);
-                /*
-                Text text1 = btn.transform.GetChild(0).GetComponent<Text>();
-                Text text2 = btn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
                 text1.text = hive.name;
                 text2.text = hive.name;
-                */
             });
 
             // Create a new button there, then open the hive panel
@@ -130,7 +132,7 @@ public class ViewProfile : MonoBehaviour
     {
         bool interact = (DB.viewedUser == DB.activeUser);
         hiveView = (GameObject)Instantiate(Resources.Load("HiveView", typeof(GameObject))) as GameObject;
-        if (hiveView == null) return hive.name;
+        if (hiveView == null) return hive.name; 
         hiveView.transform.SetParent(canvas.transform);
         hiveView.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(0, 0, 0);
         InputField[] fields = hiveView.GetComponentsInChildren<InputField>();
