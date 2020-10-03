@@ -72,10 +72,10 @@ public class HiveManage : MonoBehaviour
             else
             {
                 string[] rawLines = webRequest.downloadHandler.text.Split('\n');
+                /*
                 if (DB.viewedUser.hives.Count > 0)
-                {
-                    //DB.viewedUser.hives.Clear();
-                }
+                    DB.viewedUser.hives.Clear();
+                */
                 foreach (string rawDetails in rawLines)
                 {
                     Hive tempHive = new Hive();
