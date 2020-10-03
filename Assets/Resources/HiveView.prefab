@@ -2946,6 +2946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deleteButton
       objectReference: {fileID: 0}
+    - target: {fileID: 5163648730866361042, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
+      propertyPath: m_Interactable
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

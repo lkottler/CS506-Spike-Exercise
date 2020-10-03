@@ -56,7 +56,6 @@ public class ViewProfile : MonoBehaviour
     private void createHives()
     {
         User thisUser = DB.viewedUser;
-        Debug.Log("loading hives of: " + thisUser.username + ", hive count: " + thisUser.hives.Count);
         privateHives = 0;
         for (int i = 0; i < thisUser.hives.Count; i++)
         {   
@@ -146,6 +145,7 @@ public class ViewProfile : MonoBehaviour
                 f.interactable = interact;
             }
             hiveView.GetComponentInChildren<Toggle>().interactable = interact;
+            hiveView.GetComponentsInChildren<Button>()[1].interactable = interact;
         }
 
         fields[0].text = (hive.name == "Hive") ? "" : hive.name;
@@ -179,16 +179,15 @@ public class ViewProfile : MonoBehaviour
         hiveView.GetComponentsInChildren<Button>()[1].onClick.AddListener(delegate
         {
             DB.viewedUser.hives.Remove(hive);
-            /*  TODO DELETE THIS HIVE
-             * 
-             */
-            SceneManager.LoadScene("ViewProfile");
+            loading = true;
+            StartCoroutine(DeleteHive(hive));
+            StartCoroutine(RefreshScene());
         });
 
         return hive.name;
     }
 
-    public IEnumerator PublishHive(Hive hive)
+    IEnumerator PublishHive(Hive hive)
     {
         WWWForm form = new WWWForm();
         form.AddField("ownerID", hive.ownerID);
@@ -212,8 +211,24 @@ public class ViewProfile : MonoBehaviour
             else
             {
                 if (hive.id == -1)
-                    //hive.id = int.Parse(webRequest.downloadHandler.text);
-                    Debug.Log(webRequest.downloadHandler.text); 
+                    hive.id = int.Parse(webRequest.downloadHandler.text);
+                Debug.Log(webRequest.downloadHandler.text);
+            }
+        }
+        loading = false;
+    }
+
+    IEnumerator DeleteHive(Hive hive)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("id", hive.id);
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/deleteHive.php";
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+        {
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log(": Error: " + webRequest.error);
             }
         }
         loading = false;
@@ -232,9 +247,7 @@ public class ViewProfile : MonoBehaviour
     {
         Hive hive = new Hive();
         hive.ownerID = DB.viewedUser.id;
-        Debug.Log("Id of owner: " + DB.viewedUser.id);
         DB.viewedUser.hives.Add(hive);
-        Debug.Log("Creating a new hive: " + DB.viewedUser.hives.Count);
         return hive;
     }
 

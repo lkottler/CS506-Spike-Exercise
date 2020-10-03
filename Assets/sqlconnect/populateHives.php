@@ -10,11 +10,11 @@
 
 	$owner = $_POST["ownerID"];
 
-	$hiveQuery = $db->query("SELECT * FROM hives WHERE ownerID='" . $owner ."';");
-	$row = $hiveQuery->fetch_array(MYSQLI_ASSOC)
-	echo $row["isPublic"]   . "\t" . $row["name"] . "\t" . $row["health"]  . "\t" . 
-	     $row["honeyStore"] . "\t" . $row["queenProduction"] . "\t" . 
-		 $row["equipment"]  . "\t" . $row["profit"] . "\t" . $row["id"] . "\n";
-
+	$result = $db->query("SELECT * FROM hives WHERE ownerID=" . $owner . ";");
+	while($row = $result->fetch_assoc()){
+		echo $row["isPublic"]   . "\t" . $row["name"] . "\t" . $row["health"]  . "\t" . 
+		     $row["honeyStore"] . "\t" . $row["queenProduction"] . "\t" . 
+			 $row["equipment"]  . "\t" . $row["profit"] . "\t" . $row["id"] . "\n";
+		}
 	$db->close();
 ?>
