@@ -27,8 +27,8 @@
 		echo("new Id:" + id);
 	} else { //update existing hive
 		$updatehivequery = "UPDATE beekeepers.hives
-SET ownerID= " . $ownerId . ", isPublic=" . $isPublic . ", name=" . $name . ", health=" . $health . ", honeyStore=" . $honeyStore . ", queenProduction=". $queenProduction .", equipment=". $equipment .", profit=". $profit .", id= ". $id ."
-WHERE id = ". $id .";";
+	SET ownerID=" . $ownerId . ", isPublic=" . $isPublic . ", name=" . $name . ", health=" . $health . ", honeyStore=" . $honeyStore . ", queenProduction=". $queenProduction .", equipment=". $equipment .", profit=". $profit .", id= ". $id .
+	"WHERE id=". $id .";";
 		$db->query($updatehivequery) or die("3: update hive query failed");
 	}
 	
