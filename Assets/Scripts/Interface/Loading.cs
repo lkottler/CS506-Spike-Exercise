@@ -5,15 +5,28 @@ using UnityEngine.SceneManagement;
 
 public class Loading : MonoBehaviour
 {
+    public bool loadingDB = false;
     // Start is called before the first frame update
     void Start()
     {
         DB.manager = gameObject.AddComponent(typeof(DBManager)) as DBManager;
-        DB.manager.RefreshDatabase();
+        DB.hiveManager = gameObject.AddComponent(typeof(HiveManage)) as HiveManage;
+        StartCoroutine(init());
+        StartCoroutine(ReturnScene());
     }
 
-    public void LoadMenu()
+    IEnumerator init()
     {
-        SceneManager.LoadScene("MainMenu");
+        loadingDB = true;
+        yield return DB.manager.RefreshDatabase();
+        loadingDB = false;
+    }
+    IEnumerator ReturnScene()
+    {
+        while (loadingDB)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene(DB.returnScene);
     }
 }

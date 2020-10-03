@@ -3,17 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityEngine.Networking;
-using System.Runtime.InteropServices.ComTypes;
-using System.Net;
-using System.Runtime.CompilerServices;
-using System.Net.NetworkInformation;
 
 public class MainMenu : MonoBehaviour
 {
+    private bool isLoading = false;
+
     public Text usernameDisplay1, usernameDisplay2;
 
-    private List<GameObject> buttons;
     private GameObject canvas;
     private GameObject profiles;
     private GameObject btn1, btn2;
@@ -60,7 +56,24 @@ public class MainMenu : MonoBehaviour
     public void btn_loadUser(User u)
     {
         DB.viewedUser = u;
-        //SceneManager.LoadScene("UserPage");
+        Debug.Log("attemping to load user: " + u.username);
+
+        StartCoroutine(getHives());
+        StartCoroutine(loadProfile());
+    }
+    IEnumerator loadProfile()
+    {
+        while (isLoading)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene("ViewProfile");
+    }
+    IEnumerator getHives()
+    {
+        isLoading = true;
+        yield return DB.hiveManager.GetHives();
+        isLoading = false;
     }
 
     // This function will iterate through every user in the Database, creating an associated button.
@@ -69,6 +82,7 @@ public class MainMenu : MonoBehaviour
         int x = -410, y = 920;
         for (int i = 0; i < DB.users.Count; i++)
         {
+            User user = DB.users[i];
             var btn = (GameObject)Instantiate(Resources.Load("profileButton", typeof(GameObject))) as GameObject;
             if (btn == null) continue;
             // place button on profiles object
@@ -77,14 +91,17 @@ public class MainMenu : MonoBehaviour
             // set the text
             Text text1 = btn.transform.GetChild(0).GetComponent<Text>();
             Text text2 = btn.transform.GetChild(0).GetChild(0).GetComponent<Text>();
-            text1.text = DB.users[i].username;
-            text2.text = DB.users[i].username;
-            if (DB.users[i] == DB.activeUser)
+            text1.text = user.username;
+            text2.text = user.username;
+            if (user == DB.activeUser)
                 text2.color = Color.red;
+
+            // change the user's sprite
+            btn.GetComponent<Image>().sprite = user.pfp;
 
             // place the button on x and y
             btn.GetComponent<RectTransform>().anchoredPosition3D = new Vector3(x + +164 * (i % 6), y + (i / 6) * -166, 0);
-            btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_loadUser(DB.users[i]); });
+            btn.GetComponent<Button>().onClick.AddListener(delegate { btn_loadUser(user); });
         }
     }
     private void loggedUserButtons()
@@ -92,10 +109,14 @@ public class MainMenu : MonoBehaviour
         if (btn1 != null)
         {
             btn1.GetComponentInChildren<Text>().text = "My Profile";
+            btn1.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
+            btn1.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_loadUser(DB.activeUser); });
+
         }
         if (btn2 != null)
         {
             btn2.GetComponentInChildren<Text>().text = "Logout";
+            btn2.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { btn_logout(); });
         }
     }
@@ -105,6 +126,7 @@ public class MainMenu : MonoBehaviour
         if (btn1 != null)
         {
             btn1.GetComponentInChildren<Text>().text = "Login";
+            btn1.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn1.GetComponentInChildren<Button>().onClick.AddListener(delegate { Load_loginPage(); });
         }
 
@@ -112,6 +134,7 @@ public class MainMenu : MonoBehaviour
         if (btn2 != null)
         {
             btn2.GetComponentInChildren<Text>().text = "Register";
+            btn2.GetComponentInChildren<Button>().onClick.RemoveAllListeners();
             btn2.GetComponentInChildren<Button>().onClick.AddListener(delegate { Load_registerPage(); });
 
         }
@@ -126,6 +149,6 @@ public class MainMenu : MonoBehaviour
     public void Load_registerPage()
     {
         Debug.Log("RegisterPage");
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("RegisterPage");
     }
 }

@@ -5,6 +5,7 @@ using UnityEngine;
 public class DB
 {
     public static DBManager manager;
+    public static HiveManage hiveManager;
     public static List<User> users = new List<User>();
 
     public static User viewedUser;
@@ -12,6 +13,8 @@ public class DB
     public static User activeUser;
     public static string activeUsername;
     public static bool LoggedIn { get { return activeUser != null; } }
+
+    public static string returnScene = "MainMenu";
 
     public static void logOut()
     {
@@ -32,7 +35,6 @@ public class DB
         }
         foreach (User u in DB.users)
         {
-            Debug.Log("comparing " + u.username + ":" + DB.activeUsername);
             if (u.username == DB.activeUsername)
             {
                 DB.activeUser = u;

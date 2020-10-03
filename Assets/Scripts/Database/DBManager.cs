@@ -1,16 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
-using UnityEngine.UI;
 using UnityEngine.Networking;
-using UnityEngine.SocialPlatforms;
 
 public class DBManager : MonoBehaviour
 {
-    public void RefreshDatabase()
+    public IEnumerator RefreshDatabase()
     {
-        StartCoroutine(RefreshUsers());
+        yield return StartCoroutine(RefreshUsers());
         //db.RefreshUsers();
     }
     private IEnumerator RefreshUsers()
@@ -19,6 +16,7 @@ public class DBManager : MonoBehaviour
         //string uri = "http://localhost/sqlconnect/populateUsers.php";
         using (UnityWebRequest webRequest = UnityWebRequest.Get(uri))
         {
+
             // Request and wait for the desired page.
             yield return webRequest.SendWebRequest();
             if (webRequest.isNetworkError)
@@ -39,12 +37,27 @@ public class DBManager : MonoBehaviour
                     tempUser.username = details[1];
                     tempUser.contact = details[2];
                     tempUser.address = details[3];
+                    /* TODO - encode image into sprite
+                    if (details[4] != "")
+                    {
+                        var tex = new Texture2D(128, 128, TextureFormat.RGB24, false);
+
+                        tex.ReadPixels(new Rect(0, 0, 128, 128), 0, 0);
+                        tex.Apply();
+
+                        byte[] bytes = tex.EncodeToPNG();
+                        Destroy(tex);
+                        tempUser.pfp = details[4].EncodeToPNG();
+
+                    }
+                    */
                     DB.users.Add(tempUser);
                 }
             }
+            Debug.Log("finished adding: " + DB.users.Count);
         }
-        Debug.Log("Counting Users: " + DB.users.Count);
     }
+
     public void LogOut()
     {
         DB.activeUser = null;

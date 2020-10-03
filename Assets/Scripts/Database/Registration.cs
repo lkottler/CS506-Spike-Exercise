@@ -22,21 +22,6 @@ public class Registration : MonoBehaviour
     IEnumerator Register()
     {
 
-        /* Depricated
-        WWW www = new WWW(url, form);
-        Debug.Log("Attempting to reach: " + url);
-        yield return www;
-        if (www.text == "0")
-        {
-            Debug.Log("User created successfully.");
-            UnityEngine.SceneManagement.SceneManager.LoadScene(0);
-        }
-        else
-        {
-            Debug.Log("User creation failed. Error #" + www.text);
-        }
-        */
-
         WWWForm form = new WWWForm();
         form.AddField("name", nameField.text);
         form.AddField("password", passwordField.text);
@@ -51,13 +36,19 @@ public class Registration : MonoBehaviour
             if (webRequest.downloadHandler.text[0] == '0')
             {
                 Debug.Log("User created successfully.");
-                UnityEngine.SceneManagement.SceneManager.LoadScene(3);
+                DB.users.Add(new User(nameField.text, contactField.text, addressField.text));
+                UnityEngine.SceneManagement.SceneManager.LoadScene(DB.returnScene);
             }
             else
             {
                 Debug.Log("User creation failed. Error #" + webRequest.downloadHandler.text);
             }
         }
+    }
+
+    public void returnScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(DB.returnScene);
     }
 
     public void VerifyInputs()

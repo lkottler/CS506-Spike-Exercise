@@ -45,6 +45,10 @@ public class Login : MonoBehaviour
 
     }
 
+    public void returnScene()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene(DB.returnScene);
+    }
     public void VerifyInputs()
     {
         submitButton.interactable = (nameField.text.Length >= 8 && passwordField.text.Length >= 8);
