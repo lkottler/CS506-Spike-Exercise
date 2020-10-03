@@ -13,7 +13,6 @@
 						WHERE id = ". $id .";";
 	
 	$db->query($deletehivequery) or die("2: Delete hive query failed"); //error code #2 = insert user query failed.
-	echo("deleted Id:" + id);
 
 	$db->close();
 ?>
