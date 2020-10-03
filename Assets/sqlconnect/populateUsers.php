@@ -7,7 +7,7 @@
 		exit();
 	}
 
-	$userQuery = $db->query("SELECT * FROM users ORDER by id");
+	$userQuery = $db->query("SELECT * FROM users ORDER by id;");
 	while ($row = $userQuery->fetch_array(MYSQLI_ASSOC)){
 		echo $row["id"] . "\t" . $row["username"] . "\t" . $row["contact"] . "\t" . $row["address"] . "\t" . $row["image"] . "\n";
 	}
