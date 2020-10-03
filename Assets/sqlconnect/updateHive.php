@@ -16,6 +16,10 @@
 	$equipment = $_POST["equipment"];
 	$profit = $_POST["profit"];
 
+	$name = preg_replace("/[^A-Za-z0-9 ]/", '', $name);
+	$equipment = preg_replace("/\r?\n|\r/", '', $equipment);
+
+
 	if ($id == -1) {//new 	
 	//FIXME insert hives id???
 		$inserthivequery = "INSERT INTO hives (ownerID, isPublic, name, health, honeyStore, queenProduction, equipment, profit) VALUES (" . $ownerID . ", " . $isPublic . ", '" . $name . "', " . $health . ", " . $honeyStore . ", ". $queenProduction .", '". $equipment ."', ". $profit .");";

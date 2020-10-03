@@ -12,7 +12,12 @@
 	$contact = $_POST["contact"];
 	$equipment = $_POST["equipment"];
 
-	$updateQuery = "UPDATE users SET address='" . $address . "', contact='" . $contact . "', equipment='" . $equipment . "'WHERE username='" . $username . "';";
+	$username = preg_replace("/[^A-Za-z0-9 ]/", '', $username);
+	$address = preg_replace("/\r?\n|\r/", '', $address);
+	$contact = preg_replace("/\r?\n|\r/", '', $contact);
+	$equipment = preg_replace("/\r?\n|\r/", '', $equipment);
+
+	$updateQuery = "UPDATE users SET address='" . $address . "', contact='" . $contact . "', equipment='" . $equipment . "' WHERE username='" . $username . "';";
 	$db->query($updateQuery) or die("2: update user query failed");
 	$db->close();
 ?>
