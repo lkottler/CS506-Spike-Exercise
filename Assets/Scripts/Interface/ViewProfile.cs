@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class ViewProfile : MonoBehaviour
 {
+    private bool loading = false;
 
     private Text usernameDisplay1, usernameDisplay2;
     private Image pfp; public InputField nameField;
@@ -168,12 +170,9 @@ public class ViewProfile : MonoBehaviour
 
             hive.isPublic = hiveView.GetComponentInChildren<Toggle>().isOn;
 
-            /*  TODO
-             *  SAVE HIVE TO DATABASE HERE
-             * 
-             */
-
-            SceneManager.LoadScene("ViewProfile");
+            loading = true;
+            StartCoroutine(PublishHive(hive));
+            StartCoroutine(RefreshScene());
         });
 
         // Delete Hive Button
@@ -189,9 +188,51 @@ public class ViewProfile : MonoBehaviour
         return hive.name;
     }
 
+    public IEnumerator PublishHive(Hive hive)
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("ownerID", hive.ownerID);
+        form.AddField("id", hive.id);
+        form.AddField("isPublic", (hive.isPublic) ? "1" : "0");
+        form.AddField("name", hive.name);
+        form.AddField("health", hive.health);
+        form.AddField("honeyStore", hive.honey);
+        form.AddField("queenProduction", hive.queenProduction);
+        form.AddField("equipment", hive.equipment);
+        form.AddField("profit", hive.profit);
+
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/updateHive.php";
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+        {
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log(": Error: " + webRequest.error);
+            }
+            else
+            {
+                if (hive.id == -1)
+                    //hive.id = int.Parse(webRequest.downloadHandler.text);
+                    Debug.Log(webRequest.downloadHandler.text); 
+            }
+        }
+        loading = false;
+    }
+
+    IEnumerator RefreshScene()
+    {
+        while (loading)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene("ViewProfile");
+    }
+
     public Hive btn_newHive()
     {
         Hive hive = new Hive();
+        hive.ownerID = DB.viewedUser.id;
+        Debug.Log("Id of owner: " + DB.viewedUser.id);
         DB.viewedUser.hives.Add(hive);
         Debug.Log("Creating a new hive: " + DB.viewedUser.hives.Count);
         return hive;
