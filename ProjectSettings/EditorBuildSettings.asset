@@ -21,9 +21,6 @@ EditorBuildSettings:
     path: Assets/Scenes/ManagePage.unity
     guid: 1db4a6d9c219fd743bca7cfaf36b395f
   - enabled: 1
-    path: Assets/Scenes/HiveManageForm.unity
-    guid: 18b8d04477c2c054694f0d15c7767675
-  - enabled: 1
     path: Assets/Scenes/ViewProfile.unity
     guid: 386a23326872c9c409935b2ff92547c9
   m_configObjects: {}
