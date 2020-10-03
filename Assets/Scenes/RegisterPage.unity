@@ -1036,11 +1036,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -200
+      value: -214
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70.42
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_SizeDelta.x
@@ -1588,7 +1588,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Username:'
+  m_Text: 'Username: (min 8)'
 --- !u!222 &1822544491
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2136,7 +2136,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Password:
+  m_Text: 'Password: (min 8)
 
 '
 --- !u!222 &2088116027
