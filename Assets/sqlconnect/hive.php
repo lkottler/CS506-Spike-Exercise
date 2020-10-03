@@ -6,8 +6,9 @@
 		echo "1: Connection failed"; //error code #1 = failed to connect to db
 		exit();
 	}	
-	$owner = $_POST["ownerId"];//?? how do I access
+	
 
+	$owner = $_POST["ownerId"];//?? how do I access
 
 	$isPublic = $_POST["isPublic"];//
 	$name = $_POST["name"];
