@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 677, y: 492}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 88
+  controlID: 82
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 414
     height: 947
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -95,8 +95,8 @@ MonoBehaviour:
     y: 0
     width: 234
     height: 636
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -224,10 +224,10 @@ MonoBehaviour:
     y: 0
     width: 1506
     height: 947
-  m_MinSize: {x: 403, y: 492}
+  m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 16
+  controlID: 111
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -249,10 +249,10 @@ MonoBehaviour:
     y: 0
     width: 1506
     height: 636
-  m_MinSize: {x: 403, y: 221}
-  m_MaxSize: {x: 8003, y: 4021}
+  m_MinSize: {x: 402, y: 221}
+  m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 17
+  controlID: 112
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -355,9 +355,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 70}
-    m_SelectedIDs: 2c3e0000
-    m_LastClickedID: 15916
-    m_ExpandedIDs: 00000000143e0000163e0000183e00001a3e000000ca9a3b
+    m_SelectedIDs: 2c3a0000
+    m_LastClickedID: 14892
+    m_ExpandedIDs: 00000000143a0000163a0000183a00001a3a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -385,7 +385,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000143e0000163e0000183e00001a3e0000
+    m_ExpandedIDs: 00000000143a0000163a0000183a00001a3a0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -509,21 +509,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 34a8ffff54a8ffff98a8ffffcca9ffff12aaffff58aaffff5caaffff92aaffff18b0ffff70b0ffffb8b0fffffeb5ffff56b6ffff70b8ffffbcb8ffff0abaffff24bcffff7cbcffffdcbcffffacbdfffff4bdffff40beffff9cbeffff5ebfffffc4bfffffe4bfffff28c0ffffe0c0ffff14c2ffff5ac2ffff5ec2ffff94c2ffffcac2ffff06c4ffff22c6ffffb8cfffff3ad1ffff5ad1ffff9ed1ffff56d2ffff8ad3ffff8ed3ffffd4d3ffff0ad4ffff40d4ffff02d9ffff98ecffffccecffff14edffffb0edffffd0edffff94eeffffb2eeffffeaefffff32f0ffff7af0ffffb6f0fffff0f0ffffdcf2ffff343c0000ba3c00004a4700007247000090470000624900006649000088490000a2520000a6520000d052000008540000305400009c550000be550000e85600001057000016640000346400004a6400005a6400006e6400003e6600004a660000
+      m_ExpandedIDs: 5c9dffff7c9dffffbc9dfffffe9dffff409effff449effff769effff729fffff929fffffd29fffff14a0ffff56a0ffff5aa0ffff8ca0ffff2aa1ffff4aa1ffff8aa1ffffcca1ffff0ea2ffff12a2ffff44a2ffff96a6ffffb6a6fffff6a6ffff38a7ffff7aa7ffff7ea7ffffb0a7ffffd4a8fffff4a8ffff34a9ffff76a9ffffb8a9ffffbca9ffffeea9ffffbcafffffdcafffff1cb0ffff5eb0ffffa0b0ffffa4b0ffffd6b0ffff4cb2ffff98b2ffffb8b2ffff8cb3ffff90b3ffffd4b3ffff0cb4ffff42b4ffff64b7fffff4bcffffa4bdffff04beffff9cbeffffe0beffff88c4ffffa8c4ffff7cc5ffffc0c5ffff06c6ffff0ac6ffff40c6ffff36d3ffff56d3ffff96d3ffffd8d3ffff1ad4ffff1ed4ffff50d4ffff40e8ffff36ecffff02f7ffff22f7fffff4f7ffff38f8ffff7cf8ffff80f8ffffb4f8ffffccf9ffffd23f0000ec3f00000a400000d8430000fa430000a2490000bc490000da490000704b0000984b0000a64c0000d24d0000e84d00000e4e0000e44e00000a4f0000164f0000204f0000505400007454000096580000b0580000ce5800001e5d0000565d0000066100003e6100003c65000074650000d66800000e690000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: text-titleFront
-        m_OriginalName: text-titleFront
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 21526
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -569,9 +569,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 695.24603, y: 359.60876, z: -83.761856}
+    m_Target: {x: 743.02356, y: 133.62495, z: -950.6592}
     speed: 2
-    m_Value: {x: 695.24603, y: 359.60876, z: -83.761856}
+    m_Value: {x: 740.0484, y: 185.51138, z: -945.0248}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -622,9 +622,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 444.42325
+    m_Target: 1495.1334
     speed: 2
-    m_Value: 444.42325
+    m_Value: 1565.5847
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -697,8 +697,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -635
     m_HBaseRangeMax: 635
-    m_VBaseRangeMin: -307.5
-    m_VBaseRangeMax: 307.5
+    m_VBaseRangeMin: -297
+    m_VBaseRangeMax: 297
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -715,11 +715,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 0
+      y: 21
       width: 1270
-      height: 615
+      height: 594
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 635, y: 307.5}
+    m_Translation: {x: 635, y: 297}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -727,9 +727,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -635
-      y: -307.5
+      y: -297
       width: 1270
-      height: 615
+      height: 594
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1270, y: 615}
