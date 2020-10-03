@@ -37,6 +37,7 @@ public class DBManager : MonoBehaviour
                     tempUser.username = details[1];
                     tempUser.contact = details[2];
                     tempUser.address = details[3];
+                    tempUser.equipment = details[4];
                     /* TODO - encode image into sprite
                     if (details[4] != "")
                     {
@@ -54,7 +55,6 @@ public class DBManager : MonoBehaviour
                     DB.users.Add(tempUser);
                 }
             }
-            Debug.Log("finished adding: " + DB.users.Count);
         }
     }
 

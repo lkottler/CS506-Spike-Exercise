@@ -233,6 +233,32 @@ public class ViewProfile : MonoBehaviour
         }
         loading = false;
     }
+    IEnumerator UpdateUser()
+    {
+        WWWForm form = new WWWForm();
+        form.AddField("username", DB.viewedUser.username);
+        form.AddField("address", addressField.text);
+        form.AddField("contact", contactField.text);
+        form.AddField("equipment", equipmentField.text);
+
+        string url = "http://pages.cs.wisc.edu/~lkottler/sqlconnect/updateUser.php";
+        using (UnityWebRequest webRequest = UnityWebRequest.Post(url, form))
+        {
+            yield return webRequest.SendWebRequest();
+            if (webRequest.isNetworkError)
+            {
+                Debug.Log(": Error: " + webRequest.error);
+            }
+            else
+            {
+                DB.viewedUser.address = addressField.text;
+                DB.viewedUser.contact = contactField.text;
+                DB.viewedUser.equipment = equipmentField.text;
+            }
+        }
+        loading = false;
+    }
+
 
     IEnumerator RefreshScene()
     {
@@ -241,6 +267,15 @@ public class ViewProfile : MonoBehaviour
             yield return new WaitForSeconds(0.1f);
         }
         SceneManager.LoadScene("ViewProfile");
+    }
+
+    IEnumerator ReturnScene()
+    {
+        while (loading)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+        SceneManager.LoadScene(DB.returnScene);
     }
 
     public Hive btn_newHive()
@@ -253,14 +288,8 @@ public class ViewProfile : MonoBehaviour
 
     public void saveAndReturn()
     {
-        DB.viewedUser.address = addressField.text;
-        DB.viewedUser.contact = contactField.text;
-        DB.viewedUser.equipment = equipmentField.text;
-        /*  TODO
-         *  write to database new user contact/address/equipment
-         * 
-         */
-
-        SceneManager.LoadScene(DB.returnScene);
+        loading = true;
+        StartCoroutine(UpdateUser());
+        StartCoroutine(ReturnScene());
     }
 }

@@ -56,7 +56,6 @@ public class MainMenu : MonoBehaviour
     public void btn_loadUser(User u)
     {
         DB.viewedUser = u;
-        Debug.Log("attemping to load user: " + u.username);
 
         StartCoroutine(getHives());
         StartCoroutine(loadProfile());
@@ -143,7 +142,6 @@ public class MainMenu : MonoBehaviour
     public void Load_loginPage()
     {
         SceneManager.LoadScene("LoginPage");
-        Debug.Log("Attempted to Load Login Page");
     }
 
     public void Load_registerPage()
