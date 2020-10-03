@@ -561,7 +561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.52, y: -0.95502}
+  m_AnchoredPosition: {x: 2.52, y: -0.9550209}
   m_SizeDelta: {x: 727.3914, y: 85.67294}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123257489
@@ -1066,35 +1066,35 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 455
+      value: -147
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -244.92
+      value: 52.08
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 205.5253
+      value: 205.52527
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 61.920677
+      value: 61.920685
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.5
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5163648730866361043, guid: 59352948c48f1db4d84612d2d934efa6, type: 3}
       propertyPath: m_Pivot.x

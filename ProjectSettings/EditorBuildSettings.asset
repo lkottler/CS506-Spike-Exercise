@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/RegisterPage.unity
     guid: 3a9d77bee975f804d91c071e220feeaa
   - enabled: 1
+    path: Assets/Scenes/ManagePage.unity
+    guid: 1db4a6d9c219fd743bca7cfaf36b395f
+  - enabled: 1
     path: Assets/Scenes/ViewProfile.unity
     guid: 386a23326872c9c409935b2ff92547c9
   m_configObjects: {}
